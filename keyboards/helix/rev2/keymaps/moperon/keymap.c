@@ -110,7 +110,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * |------+------+------+------+------+------+------+------+------+------+------+------+------+------|
    * | Shift|      |      |      |      |      |      |      |      |      |      |      |  Up  | Shift|
    * |------+------+------+------+------+------+------+------+------+------+------+------+------+------|
-   * |Adjust|  Fn  |Option|  CMD | Eisu |Lower |Space |Space |Raise | Kana |  CMD | Left | Down |Right |
+   * |Adjust|      |Option|  CMD | Eisu |Lower |Space |Space |Raise | Kana |  CMD | Left | Down |Right |
    * `-------------------------------------------------------------------------------------------------'
    */
   [_LOWER] = LAYOUT( \
@@ -131,7 +131,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * |------+------+------+------+------+------+------+------+------+------+------+------+------+------|
    * | Shift|      |      |      |      |      |      |      |      |      |      |      | PgUp | Shift|
    * |------+------+------+------+------+------+------+------+------+------+------+------+------+------|
-   * |Adjust|  Fn  |Option|  CMD | Eisu |Lower |Space |Space |Raise | Kana |  CMD | Home | PgDn | End  |
+   * |Adjust|      |Option|  CMD | Eisu |Lower |Space |Space |Raise | Kana |  CMD | Home | PgDn | End  |
    * `-------------------------------------------------------------------------------------------------'
    */
   [_RAISE] = LAYOUT( \
