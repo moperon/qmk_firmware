@@ -102,44 +102,44 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   /* Lower
    * ,-----------------------------------------.             ,-----------------------------------------.
-   * | ESC  |      |      |      |      |      |             |      |      |      |  {   |  }   |  ~   |
+   * | ESC  |      |      |      |      |      |             |      |      |      |  +   |  =   |  ~   |
    * |------+------+------+------+------+------|             |------+------+------+------+------+------|
-   * | Tab  |      |      |      |      |      |             |      |      |      |  =   |  +   | Del  |
+   * | Tab  |      |      |      |      |      |             |      |      |  `   |  '   |  "   | Del  |
    * |------+------+------+------+------+------|             |------+------+------+------+------+------|
    * | Ctrl |      |      |      |      |      |             |      |      |      |      |  |   | Enter|
    * |------+------+------+------+------+------+------+------+------+------+------+------+------+------|
-   * | Shift|      |      |      |      |      |      |      |      |      |      |      |  \   | Shift|
+   * | Shift|      |      |      |      |      |      |      |      |      |  [   |  ]   |  \   | Shift|
    * |------+------+------+------+------+------+------+------+------+------+------+------+------+------|
    * |Adjust|      |      |Option|  CMD |Lower |Space |Space |Raise |  CMD | Home |PgDown| PgUp | End  |
    * `-------------------------------------------------------------------------------------------------'
    */
   [_LOWER] = LAYOUT( \
-      _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX, KC_LCBR, KC_RCBR, KC_TILD, \
-      _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX, KC_EQL,  KC_PLUS, KC_DEL, \
+      _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX, KC_PLUS, KC_EQL,  KC_TILD, \
+      _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, KC_GRV,  KC_QUOT, KC_DQUO, KC_DEL, \
       _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_PIPE, _______, \
-      _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_BSLS, _______, \
+      _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_LBRC, KC_RBRC, KC_BSLS, _______, \
       _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, KC_HOME, KC_PGDN, KC_PGUP, KC_END \
       ),
 
   /* Raise
    * ,-----------------------------------------.             ,-----------------------------------------.
-   * | ESC  |  F1  |  F2  |  F3  |  F4  |  F5  |             |      |      |      |  [   |  ]   |  ~   |
+   * | ESC  |  F1  |  F2  |  F3  |  F4  |  F5  |             |      |      |      |  +   |  =   |  ~   |
    * |------+------+------+------+------+------|             |------+------+------+------+------+------|
    * | Tab  |  F6  |  F7  |  F8  |  F9  |  F10 |             |      |      |  `   |  '   |  "   | Del  |
    * |------+------+------+------+------+------|             |------+------+------+------+------+------|
    * | Ctrl |  F11 |  F12 |      |      |      |             |      |      |      |      |  |   | Enter|
    * |------+------+------+------+------+------+------+------+------+------+------+------+------+------|
-   * | Shift|      |      |      |      |      |      |      |      |      |      |      |  \   | Shift|
+   * | Shift|      |      |      |      |      |      |      |      |      |  {   |  }   |  \   | Shift|
    * |------+------+------+------+------+------+------+------+------+------+------+------+------+------|
    * |Adjust|      |      |Option|  CMD |Lower |Space |Space |Raise |  CMD | Home |PgDown| PgUp | End  |
    * `-------------------------------------------------------------------------------------------------'
    */
   [_RAISE] = LAYOUT( \
-      _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,                     XXXXXXX, XXXXXXX, XXXXXXX, KC_LBRC, KC_RBRC, KC_TILD, \
-      _______, KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,                    XXXXXXX, XXXXXXX, KC_GRV,  KC_QUOT, KC_DQUO, KC_DEL, \
-      _______, KC_F11,  KC_F12,  XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_PIPE, _______, \
-      _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_BSLS, _______, \
-      _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, KC_HOME, KC_PGDN, KC_PGUP, KC_END \
+      _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,                     XXXXXXX, XXXXXXX, XXXXXXX, _______, _______, _______, \
+      _______, KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,                    XXXXXXX, XXXXXXX, _______, _______, _______, _______, \
+      _______, KC_F11,  KC_F12,  XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______, _______, \
+      _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_LCBR, KC_RCBR, _______, _______, \
+      _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______ \
       ),
 
   /* Adjust (Lower + Raise)
