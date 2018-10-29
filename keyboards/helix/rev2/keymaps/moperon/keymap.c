@@ -10,6 +10,7 @@
 #ifdef SSD1306OLED
   #include "ssd1306.h"
 #endif
+#include "keymap.h"
 
 extern keymap_config_t keymap_config;
 
@@ -388,6 +389,7 @@ void matrix_update(struct CharacterMatrix *dest,
 #define L_ADJUST (1<<_ADJUST)
 #define L_ADJUST_TRI (L_ADJUST|L_RAISE|L_LOWER)
 
+/*
 static void render_logo(struct CharacterMatrix *matrix) {
 
   static char logo[]={
@@ -398,9 +400,7 @@ static void render_logo(struct CharacterMatrix *matrix) {
   matrix_write(matrix, logo);
   //matrix_write_P(&matrix, PSTR(" Split keyboard kit"));
 }
-
-
-
+*/
 void render_status(struct CharacterMatrix *matrix) {
 
   // Render to mode icon
@@ -451,6 +451,67 @@ void render_status(struct CharacterMatrix *matrix) {
   matrix_write(matrix, led);
 }
 
+void render_status_slave(struct CharacterMatrix *matrix) {
+  char indicator_qwerty[3][5]={
+    {0x80,0x81,0x82,0x83,0},
+    {0xa0,0xa1,0xa2,0xa3,0},
+    {0xc0,0xc1,0xc2,0xc3,0}};
+
+  char indicator_keypad[3][5]={
+    {0x84,0x85,0x86,0x87,0},
+    {0xa4,0xa5,0xa6,0xa7,0},
+    {0xc4,0xc5,0xc6,0xc7,0}};
+
+  char indicator_raise[3][5]={
+    {0x88,0x89,0x8a,0x8b,0},
+    {0xa8,0xa9,0xaa,0xab,0},
+    {0xc8,0xc9,0xca,0xcb,0}};
+
+  char indicator_lower[3][5]={
+    {0x8c,0x8d,0x8e,0x8f,0},
+    {0xac,0xad,0xae,0xaf,0},
+    {0xcc,0xcd,0xce,0xcf,0}};
+
+  char indicator_adjust[3][5]={
+    {0x90,0x91,0x92,0x93,0},
+    {0xb0,0xb1,0xb2,0xb3,0},
+    {0xd0,0xd1,0xd2,0xd3,0}};
+
+  char buf[40];
+  snprintf(buf,sizeof(buf), "Undef-%ld", layer_state);
+
+  switch (layer_state) {
+    case L_BASE:
+       //matrix_write_P(matrix, PSTR("Default"));
+       if (current_default_layer == _QWERTY) {
+         matrix_write_indicator(matrix, indicator_qwerty);
+       } else {
+         matrix_write_indicator(matrix, indicator_keypad);
+       }
+       break;
+    case L_RAISE:
+       matrix_write_indicator(matrix, indicator_raise);
+       break;
+    case L_LOWER:
+       matrix_write_indicator(matrix, indicator_lower);
+       break;
+    case L_ADJUST:
+    case L_ADJUST_TRI:
+       matrix_write_indicator(matrix, indicator_adjust);
+       break;
+    default:
+       matrix_write(matrix, buf);
+  }
+}
+/*
+void matrix_write_indicator(struct CharacterMatrix *matrix, char **indicator) {
+  matrix_write(matrix, indicator[0]);
+  matrix_write_P(matrix, PSTR("\n"));
+  matrix_write(matrix, indicator[1]);
+  matrix_write_P(matrix, PSTR("\n"));
+  matrix_write(matrix, indicator[2]);
+}
+*/
 
 void iota_gfx_task_user(void) {
   struct CharacterMatrix matrix;
@@ -465,7 +526,7 @@ void iota_gfx_task_user(void) {
   if(is_master){
     render_status(&matrix);
   }else{
-    render_logo(&matrix);
+    render_status_slave(&matrix);
   }
   matrix_update(&display, &matrix);
 }
