@@ -81,23 +81,23 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   /* Keypad mode
    * ,-----------------------------------------.             ,-----------------------------------------.
-   * | ESC  |      |  7   |  8   |  9   |  /?  |             |  /?  |  7   |  8   |  9   |      |      |
+   * | ESC  |      |      |      |      |      |             |      | ESC  |      |  %   |  /   |      |
    * |------+------+------+------+------+------|             |------+------+------+------+------+------|
-   * | Tab  |      |  4   |  5   |  6   |  *   |             |  *   |  4   |  5   |  6   |      | Bksp |
+   * | Tab  |      |  Up  |      |      |      |             |      |  7   |  8   |  9   |  *   | Bksp |
    * |------+------+------+------+------+------|             |------+------+------+------+------+------|
-   * | Ctrl |      |  1   |  2   |  3   |  -   |             |  -   |  1   |  2   |  3   |      |Enter |
+   * | Ctrl | Left | Down | Right|      |      |             |      |  4   |  5   |  6   |  -   |Enter |
    * |------+------+------+------+------+------+------+------+------+------+------+------+------+------|
-   * | Shift|      |  0   |  ,<  |  .>  |  +   |  =   |  =   |  +   |  0   |  ,<  |  .>  |      |Shift |
+   * | Shift|      |      |      |      |      |      |      |      |  1   |  2   |  3   |  +   |Shift |
    * |------+------+------+------+------+------+------+------+------+------+------+------+------+------|
-   * |Adjust|      |      |Option|  CMD |Lower |Space |Space |Raise |  CMD | Left | Down |  Up  |Right |
+   * |Adjust|      |      |Option|  CMD |      |Space |Space |      |  0   |  ,   |  .   |  =   |      |
    * `-------------------------------------------------------------------------------------------------'
    */
   [_KEYPAD] = LAYOUT( \
-      _______, XXXXXXX, KC_KP_7, KC_KP_8, KC_KP_9, KC_SLSH,                   KC_SLSH, KC_KP_7, KC_KP_8, KC_KP_9, XXXXXXX, XXXXXXX, \
-      _______, XXXXXXX, KC_KP_4, KC_KP_5, KC_KP_6, KC_PAST,                   KC_PAST, KC_KP_4, KC_KP_5, KC_KP_6, XXXXXXX, _______, \
-      _______, XXXXXXX, KC_KP_1, KC_KP_2, KC_KP_3, KC_PMNS,                   KC_PMNS, KC_KP_1, KC_KP_2, KC_KP_3, XXXXXXX, _______, \
-      _______, XXXXXXX, KC_KP_0, KC_COMM, KC_DOT,  KC_PPLS, KC_PEQL, KC_PEQL, KC_PPLS, KC_KP_0, KC_COMM, KC_DOT,  XXXXXXX, _______, \
-      _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______ \
+      _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, KC_ESC,  XXXXXXX, KC_PERC, KC_PSLS, XXXXXXX, \
+      _______, XXXXXXX, KC_UP,   XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, KC_KP_7, KC_KP_8, KC_KP_9, KC_PAST, _______, \
+      _______, KC_LEFT, KC_DOWN, KC_RGHT, XXXXXXX, XXXXXXX,                   XXXXXXX, KC_KP_4, KC_KP_5, KC_KP_6, KC_PMNS, KC_PENT, \
+      _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_KP_1, KC_KP_2, KC_KP_3, KC_PPLS, _______, \
+      _______, _______, _______, _______, _______, XXXXXXX, _______, _______, XXXXXXX, KC_KP_0, KC_COMM, KC_PDOT, KC_PEQL, XXXXXXX \
     ),
 
   /* Lower
