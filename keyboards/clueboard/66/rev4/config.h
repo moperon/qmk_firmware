@@ -8,7 +8,6 @@
 #define DEVICE_VER      0x0001
 #define MANUFACTURER    Clueboard
 #define PRODUCT         Clueboard 66% rev4
-#define DESCRIPTION     QMK keyboard firmware for Clueboard
 
 /* Address for jumping to bootloader on STM32 chips. */
 /* It is chip dependent, the correct number can be looked up here:
@@ -30,7 +29,7 @@
 #define DIODE_DIRECTION COL2ROW
 
 /* Set 0 if debouncing isn't needed */
-#define DEBOUNCING_DELAY 5
+#define DEBOUNCE 5
 
 /* Mechanical locking support. Use KC_LCAP, KC_LNUM or KC_LSCR instead in keymap */
 #define LOCKING_SUPPORT_ENABLE

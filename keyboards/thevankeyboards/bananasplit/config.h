@@ -26,7 +26,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define DEVICE_VER      0x0001
 #define MANUFACTURER    TheVan Keyboards
 #define PRODUCT         BananaSplit 60
-#define DESCRIPTION     keyboard firmware for BananaSplit 60
 
 /* key matrix size */
 #define MATRIX_ROWS 5
@@ -48,7 +47,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define BACKLIGHT_PIN B7
 
 /* Set 0 if debouncing isn't needed */
-#define DEBOUNCING_DELAY  5
+#define DEBOUNCE  5
 #define TAPPING_TERM      175
 
 /* Mechanical locking support. Use KC_LCAP, KC_LNUM or KC_LSCR instead in keymap */

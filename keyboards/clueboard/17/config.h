@@ -26,7 +26,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define DEVICE_VER      0x0001
 #define MANUFACTURER    Clueboard
 #define PRODUCT         Cluepad with RGB Underlighting
-#define DESCRIPTION     QMK keyboard firmware for Cluepad
 
 /* key matrix size */
 #define MATRIX_ROWS 5
@@ -52,7 +51,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //#define MATRIX_HAS_GHOST
 
 /* Set 0 if debouncing isn't needed */
-#define DEBOUNCING_DELAY 5
+#define DEBOUNCE 5
 
 /* Number of backlighting levels */
 #define BACKLIGHT_LEVELS 3
